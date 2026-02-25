@@ -1,8 +1,6 @@
-<<<<<<< HEAD
 # Exhibit-Frontend
 
 Example website to show off some general skills, pulling from [exhibit-backend](https://github.com/timrxd/exhibit-backend)
-=======
 # React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
@@ -76,4 +74,3 @@ export default defineConfig([
   },
 ])
 ```
->>>>>>> d1b4143 (testing frameworks)
