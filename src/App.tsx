@@ -3,8 +3,9 @@ import { ProtectedRoute } from "./components/ProtectedRoute";
 import { HomePage } from "./pages/Home";
 import { LoginPage } from "./pages/Login";
 import { Secret } from "./pages/Secret";
-import { NavBar } from "./pages/Nav";
+import { Navbar } from "./pages/Nav";
 import { AuthProvider } from "./components/AuthProvider";
+import "./App.css"
 
 const router = createBrowserRouter([
   {
@@ -23,12 +24,10 @@ const router = createBrowserRouter([
 
 const App = () => (
   <div>
-    <a style={{float: "left", width: "25%", height: "100%", borderStyle: "solid"}}>
-      <NavBar></NavBar>
-    </a>
-    <a style={{float: "left", marginLeft: "26%"}}>
+    <Navbar></Navbar>
+    <div id="main">
       <RouterProvider router={router}/>
-    </a>
+    </div>
   </div>
 );
 
