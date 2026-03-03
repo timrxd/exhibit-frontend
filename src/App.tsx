@@ -3,7 +3,7 @@ import { ProtectedRoute } from "./components/ProtectedRoute";
 import { HomePage } from "./pages/Home";
 import { LoginPage } from "./pages/Login";
 import { Secret } from "./pages/Secret";
-import { Navbar } from "./pages/Nav";
+import Navbar from "./pages/Nav";
 import { AuthProvider } from "./components/AuthProvider";
 import "./App.css"
 

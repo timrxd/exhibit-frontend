@@ -2,7 +2,7 @@
 /* The side navigation menu */
 .sidenav {
   height: 100%; /* 100% Full-height */
-  width: 45px; /* 0 width - change this with JavaScript */
+  width: 250px; /* 0 width - change this with JavaScript */
   position: fixed; /* Stay in place */
   z-index: 1; /* Stay on top */
   top: 0; /* Stay at the top */
@@ -11,6 +11,14 @@
   overflow-x: hidden; /* Disable horizontal scroll */
   padding-top: 60px; /* Place content 60px from the top */
   transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+}
+
+.navopen {
+  width: 250px;
+}
+
+.navclosed {
+  width: 45px;
 }
 
 /* The navigation menu links */
@@ -29,17 +37,20 @@
 }
 
 /* Position and style the close button (top right corner) */
-.sidenav .closebtn {
+.navbutton {
   position: absolute;
   top: 0;
   font-size: 36px;
-  margin-left: -40px;
+  margin-left: 0px;
+  background-color: #111; /* Black*/
+  color: #f1f1f1;
+  font-family: ui-monospace;
 }
 
 /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
 #main {
   transition: margin-left .5s;
-  margin-left: 45px;
+  margin-left: 250px;
   padding: 20px;
 }
 

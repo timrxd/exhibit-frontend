@@ -1,26 +1,39 @@
 import '../App.css'
+import { useState } from 'react';
 
-/* Set the width of the side navigation to 250px and the left margin of the page content to 250px */
-function openNav() {
-  document.getElementById("mySidenav")!.style.width = "250px";
-  document.getElementById("main")!.style.marginLeft = "250px";
-  document.getElementById("closebtn")!.onclick = closeNav
-  document.getElementById("closebtn")!.innerHTML = "&times;"
+interface NavButtonProps {
+  /** The text to display inside the button */
+  buttonText: string;
+  /** Whether the button can be interacted with */
+  onButtonClick: () => void;
 }
 
-/* Set the width of the side navigation to 0 and the left margin of the page content to 0 */
-function closeNav() {
-  document.getElementById("mySidenav")!.style.width = "45px";
-  document.getElementById("main")!.style.marginLeft = "45px";
-  document.getElementById("closebtn")!.onclick = openNav
-  document.getElementById("closebtn")!.innerHTML = "&#9776;"
+function NavButton({ buttonText, onButtonClick }: NavButtonProps) {
+  return (
+    <button className='navbutton' onClick={onButtonClick}>
+      {buttonText}
+    </button>
+  );
 }
 
-export const Navbar = () => (
-  <div id='mySidenav' className={"sidenav"}>
-    <a href="javascript:void(0)" id= "closebtn" className="closebtn" onClick={closeNav}>&times;</a>
-    <a href="/">Home </a>
-    <a href="/login">Login </a>
-    <a href="/secret">Secret </a>
-  </div>
-);
+export default function Navbar() {
+
+  const [isOpen, setOpen] = useState(true)
+
+  function handleClick() {
+    console.log("boo");
+    setOpen(!isOpen)
+  }
+
+  let navStyle = isOpen ? "sidenav navopen" : "sidenav navclosed";
+  let buttonText = isOpen ? "x" : "☰";
+
+  return (
+    <div id='mySidenav' className={navStyle}>
+      <NavButton buttonText={buttonText} onButtonClick={() => handleClick()} />
+      <a href="/">Home </a>
+      <a href="/login">Login </a>
+      <a href="/secret">Secret </a>
+    </div>
+  );
+}
